@@ -9,12 +9,15 @@
   "scripts": {
     "lint": "eslint --ext .js,.ts,.vue ./",
     "format": "prettier --write \"**/*.{js,ts,vue,css,html,md,json}\" --ignore-path .gitignore",
+    "dev:bex": "quasar dev -m bex",
+    "build:bex": "quasar build -m bex",
     "test": "echo \"No test specified\" && exit 0",
     "dev": "quasar dev",
     "build": "quasar build"
   },
   "dependencies": {
     "@quasar/extras": "^1.16.4",
+    "events": "^3.3.0",
     "quasar": "^2.16.0",
     "vue": "^3.4.18",
     "vue-router": "^4.0.12"
