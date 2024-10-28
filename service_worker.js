@@ -37,7 +37,7 @@ const rules = [
         },
         condition: {
             urlFilter: 'https://chat.usercontent.google.com/download',
-            resourceTypes: [chrome.declarativeNetRequest.ResourceType.MEDIA],
+            resourceTypes: [chrome.declarativeNetRequest.ResourceType.MEDIA, chrome.declarativeNetRequest.ResourceType.MAIN_FRAME],
         },
     },
 ];
