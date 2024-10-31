@@ -1,27 +1,102 @@
-{
-    "update_url": "https://clients2.google.com/service/update2/crx",
-    "manifest_version": 3,
-    "icons": {
-        "16": "icons/icon-16x16.png",
-        "48": "icons/icon-48x48.png",
-        "128": "icons/icon-128x128.png"
-    },
-    "permissions": ["declarativeNetRequestWithHostAccess"],
-    "host_permissions": ["https://youtube.googleapis.com/embed/*", "https://chat.google.com/*", "https://chat.usercontent.google.com/*"],
-    "action": {
-        "default_title": "Google Chat Video Fixer for Netfree Users"
-    },
-    "background": {
-        "service_worker": "service_worker.js"
-    },
-    "web_accessible_resources": [
-        {
-            "resources": ["player.html"],
-            "matches": ["https://chat.google.com/*"]
-        }
-    ],
-    "name": "Google Chat Video Fixer for Netfree Users",
-    "short_name": "Google Chat Video Fixer for Netfree",
-    "description": "Fix Google Chat video attachments for netfree users",
-    "version": "1.2.0"
+:root {
+    --primary-color: #1a73e8;
+    --hover-color: #1557b0;
+    --background-color: #f8f9fa;
+    --text-color: #202124;
+    --border-radius: 8px; /* אפשרות להוסיף רדיוס קבוע */
+    --spinner-size: 50px; /* גודל לספינר */
+    --button-padding: 10px 20px; /* ריפוד כפתור */
+    --font-size: 16px; /* גודל טקסט כפתור */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.video-container {
+    position: relative;
+    width: 90%;
+    height: 90vh;
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* הצללה מודגשת יותר */
+    overflow: hidden;
+}
+
+.video-player {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+}
+
+.loading-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: var(--spinner-size);
+    height: var(--spinner-size);
+    border: 4px solid rgba(26, 115, 232, 0.2);
+    border-radius: 50%;
+    border-top-color: var(--primary-color);
+    animation: spin 1s linear infinite;
+    display: none; /* עדיין מוסתר עד הצורך */
+}
+
+@keyframes spin {
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+.download-button {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    padding: var(--button-padding);
+    cursor: pointer;
+    font-size: var(--font-size);
+    transition: background-color 0.2s, box-shadow 0.2s; /* הסרת אנימציית הסקל */
+    z-index: 10;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* הוספת הצללה מודרנית */
+}
+
+.download-button:hover {
+    background-color: var(--hover-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* הגברת הצללה בה-hover */
+}
+
+.download-message {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8); /* כהות מעט יותר חלשה */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 45px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease; /* הוספת סוגי אנימציה */
+}
+
+.download-message.show {
+    opacity: 1;
 }
