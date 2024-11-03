@@ -42,7 +42,7 @@ const rules = [
                 {
                     operation: chrome.declarativeNetRequest.HeaderOperation.SET,
                     header: 'Cross-Origin-Resource-Policy',
-                    value: 'youtube.googleapis.com',
+                    value: 'youtube.googleapis.com www.youtube.com',
                 },
                 {
                     operation: chrome.declarativeNetRequest.HeaderOperation.REMOVE,

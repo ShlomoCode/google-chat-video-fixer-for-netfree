@@ -7,7 +7,7 @@
         "128": "icons/icon-128x128.png"
     },
     "permissions": ["declarativeNetRequestWithHostAccess"],
-    "host_permissions": ["https://youtube.googleapis.com/embed/*", "https://chat.google.com/*", "https://chat.usercontent.google.com/*"],
+    "host_permissions": ["https://youtube.googleapis.com/embed/*", "https://www.youtube.com/embed/*", "https://chat.google.com/*", "https://chat.usercontent.google.com/*"],
     "action": {
         "default_title": "Google Chat Video Fixer for Netfree Users"
     },
@@ -23,5 +23,5 @@
     "name": "Google Chat Video Fixer for Netfree Users",
     "short_name": "Google Chat Video Fixer for Netfree",
     "description": "Fix Google Chat video attachments for netfree users",
-    "version": "1.2.0"
+    "version": "1.2.1"
 }
