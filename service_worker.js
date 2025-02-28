@@ -26,7 +26,7 @@ const rules = [
         condition: {
             regexFilter: '^https://chat.google.com/u/([0-9])/api/get_attachment_url[?]url_type=DOWNLOAD_URL(.*)[&]content_type=video(.*)',
             resourceTypes: [chrome.declarativeNetRequest.ResourceType.MAIN_FRAME],
-            initiatorDomains: ['chat.google.com'],
+            initiatorDomains: ['chat.google.com', 'mail.google.com'],
         },
     },
     {
