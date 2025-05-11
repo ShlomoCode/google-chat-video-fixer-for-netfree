@@ -42,7 +42,7 @@ const rules = [
                 {
                     operation: chrome.declarativeNetRequest.HeaderOperation.SET,
                     header: 'Cross-Origin-Resource-Policy',
-                    value: 'youtube.googleapis.com www.youtube.com',
+                    value: 'cross-origin'
                 },
                 {
                     operation: chrome.declarativeNetRequest.HeaderOperation.REMOVE,
@@ -57,7 +57,14 @@ const rules = [
     },
 ];
 
-chrome.declarativeNetRequest.updateDynamicRules({
-    removeRuleIds: rules.map((rule) => rule.id),
-    addRules: rules,
+chrome.declarativeNetRequest.getDynamicRules({}, async (existingRules) => {
+    if (existingRules.length) {
+       await chrome.declarativeNetRequest.updateDynamicRules({
+            removeRuleIds: existingRules.map((rule) => rule.id)
+        });
+    }
+    
+    chrome.declarativeNetRequest.updateDynamicRules({
+        addRules: rules
+    });
 });

@@ -1,4 +1,8 @@
 {
+    "name": "Google Chat Video Fixer for Netfree Users",
+    "short_name": "Google Chat Video Fixer for Netfree",
+    "description": "Fix Google Chat video attachments for netfree users",
+    "version": "1.2.3",
     "update_url": "https://clients2.google.com/service/update2/crx",
     "manifest_version": 3,
     "icons": {
@@ -19,9 +23,5 @@
             "resources": ["player.html"],
             "matches": ["https://chat.google.com/*", "https://mail.google.com/*"]
         }
-    ],
-    "name": "Google Chat Video Fixer for Netfree Users",
-    "short_name": "Google Chat Video Fixer for Netfree",
-    "description": "Fix Google Chat video attachments for netfree users",
-    "version": "1.2.2"
+    ]
 }
