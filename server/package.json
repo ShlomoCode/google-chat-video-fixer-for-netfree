@@ -1,0 +1,14 @@
+{
+  "name": "netfree-gchat-analytics-worker",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "format": "prettier --write *.js *.toml"
+  },
+  "devDependencies": {
+    "prettier": "^3.0.0",
+    "wrangler": "^3.0.0"
+  }
+}

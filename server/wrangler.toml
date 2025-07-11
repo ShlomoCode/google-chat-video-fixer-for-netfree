@@ -1,0 +1,15 @@
+name = "netfree-gchat-analytics"
+main = "worker.js"
+compatibility_date = "2024-07-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "analytics"
+database_id = "54401218-4bbe-481f-a42a-3a55aad8fdf7"
+migrations_dir = "migrations"
+
+[vars]
+NODE_ENV = "production"
+
+[observability.logs]
+enabled = true

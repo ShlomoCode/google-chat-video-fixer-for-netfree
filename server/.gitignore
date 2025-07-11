@@ -1,0 +1,19 @@
+# Dependencies
+node_modules
+package-lock.json
+
+# Cloudflare Workers
+.wrangler
+wrangler.toml.local
+
+# Environment variables
+.env
+.env.local
+
+# Logs
+*.log
+
+# System files
+.DS_Store
+.vscode
+.idea

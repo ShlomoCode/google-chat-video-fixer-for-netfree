@@ -1,0 +1,12 @@
+node_modules/
+dist/
+*.db
+*.db-shm
+*.db-wal
+.DS_Store
+bun.lock
+extension/dist
+
+extension/dist
+server/.wrangler
+

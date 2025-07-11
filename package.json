@@ -1,0 +1,16 @@
+{
+  "name": "netfree-gchat",
+  "version": "1.0.0",
+  "description": "Google Chat Video Fixer for Netfree Users",
+  "private": true,
+  "workspaces": [
+    "extension",
+    "server"
+  ],
+  "scripts": {
+    "format": "prettier --write **/*.js **/*.json **/*.html **/*.css"
+  },
+  "devDependencies": {
+    "prettier": "^3.0.0"
+  }
+}

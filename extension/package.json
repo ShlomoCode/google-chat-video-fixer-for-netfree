@@ -1,0 +1,12 @@
+{
+  "name": "netfree-gchat-extension",
+  "version": "1.0.0",
+  "description": "Google Chat Video Fixer for Netfree Users",
+  "scripts": {
+    "build": "rm -rf dist && mkdir -p dist && cp manifest.json player.html player.css dist/ && cp -r icons dist/ && esbuild youtube_content.js --bundle --outfile=dist/youtube_content.js --format=iife && esbuild player.js --bundle --outfile=dist/player.js --format=iife && esbuild service_worker.js --bundle --outfile=dist/service_worker.js --format=esm"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.6",
+    "prettier": "^3.0.0"
+  }
+}
